@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface StudentMedia {
   type: 'image' | 'video';
@@ -43,15 +43,13 @@ export function StudentCard({ name, age, location, school, year, quote, media }:
           />
         ) : (
           <div className="relative w-full h-full bg-black">
-            <video 
+            <iframe
               src={currentMedia.url}
-              className="w-full h-full object-cover"
-              controls
-              poster={currentMedia.thumbnail}
+              className="w-full h-full"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title={`Video of ${name}`}
             />
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <Play className="w-16 h-16 text-white opacity-70" />
-            </div>
           </div>
         )}
 
