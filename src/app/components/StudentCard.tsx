@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { ChevronLeft, ChevronRight, Play, Image } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Image as ImageIcon } from 'lucide-react';
 
 interface StudentMedia {
   type: 'image' | 'video';
@@ -87,7 +87,7 @@ export function StudentCard({ name, age, location, school, year, quote, media }:
                   {item.type === 'video' ? (
                     <Play className="w-3 h-3" fill={index === currentIndex ? 'currentColor' : 'none'} />
                   ) : (
-                    <Image className="w-3 h-3" />
+                    <ImageIcon className="w-3 h-3" />
                   )}
                 </button>
               ))}
