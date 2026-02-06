@@ -221,7 +221,8 @@ export default function Home() {
               location="Chandrapur, Maharashtra"
               school="JNV Chandrapur"
               year="2025"
-              quote="Before coming to GenWise I was an introvert and after coming here I have the courage to talk to people. I now have the courage to come out and be more interactive and help them if they need anything."
+              course="Policy Paths: Unraveling Economics, Stats, and Policy"
+              quote="Before coming to GenWise I was an introvert and after coming here I have the courage to talk to people. I now have the courage to come out and talk to people more, be more interactive and help them if they need anything and also I would ask them if I needed any help. It's a very friendly environment to learn at GenWise."
               media={[
                 {
                   type: 'video',
@@ -241,7 +242,8 @@ export default function Home() {
               location="Chandrapur, Maharashtra"
               school="JNV Chandrapur"
               year="2025"
-              quote="I used to be afraid to ask questions but now I ask doubts and I have learned that no questions are right or wrong."
+              course="Two Feet of Science: Walk like a Scientist"
+              quote="I was a bit nervous before coming because I will meet a lot of people across India. I was not sure if I could adjust but I was able to adjust and was able to communicate with people and that boosted my confidence. I used to be afraid to ask questions but now I ask doubts and I have learned that no questions are right or wrong."
               media={[
                 {
                   type: 'video',
@@ -262,7 +264,8 @@ export default function Home() {
               location="Bangalore Urban"
               school="JNV Uttara Kannada"
               year="2024 & 2025"
-              quote="Other teachers complete the syllabus for exams' sake. We don't do that here — we do it for learning purposes."
+              course="Economics, GW Pathfinder"
+              quote="I love GenWise because I met a lot of cool new people, they're very friendly and I learnt a lot of new things. One thing that I really love about GenWise is that other teachers would complete the syllabus for exams sake and we don't do that here, we do that for learning purposes and that's something I really love about GenWise."
               media={[
                 { type: 'image', url: '/images/students/unnathi-1.jpg' },
                 { type: 'image', url: '/images/students/unnathi-2.jpg' },
@@ -278,7 +281,8 @@ export default function Home() {
               location="Bulandshahar, UP"
               school="VidyaGyan Bulandshahar"
               year="2024"
-              quote="I will never forget my 3 weeks in this gifted program. Gifted World is my utopic world."
+              course="Forensic Science"
+              quote="I did not know much about Forensic Science till I came here, I got to know it is all about finding the perfect clues. It's like a jigsaw puzzle, find, put together and solve. I learned many skills that will be surely useful in my future life, I will never forget my 3 weeks in this gifted program, it's a stress free environment, Gifted World is my utopic world."
               media={[
                 {
                   type: 'video',

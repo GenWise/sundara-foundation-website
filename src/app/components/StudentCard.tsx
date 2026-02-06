@@ -2,6 +2,39 @@ import { useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ChevronLeft, ChevronRight, Play, Image as ImageIcon } from 'lucide-react';
 
+function VideoWithThumbnail({ videoUrl, thumbnail, name }: { videoUrl: string; thumbnail?: string; name: string }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  if (isPlaying || !thumbnail) {
+    return (
+      <div className="relative w-full h-full bg-black">
+        <iframe
+          src={videoUrl}
+          className="w-full h-full"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          title={`Video of ${name}`}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative w-full h-full cursor-pointer" onClick={() => setIsPlaying(true)}>
+      <ImageWithFallback
+        src={thumbnail}
+        alt={`${name} video thumbnail`}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+        <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors">
+          <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 interface StudentMedia {
   type: 'image' | 'video';
   url: string;
@@ -14,12 +47,15 @@ interface StudentCardProps {
   location: string;
   school: string;
   year: string;
+  course: string;
   quote: string;
   media: StudentMedia[];
 }
 
-export function StudentCard({ name, age, location, school, year, quote, media }: StudentCardProps) {
+export function StudentCard({ name, age, location, school, year, course, quote, media }: StudentCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const shouldTruncate = quote.length > 150;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % media.length);
@@ -36,21 +72,17 @@ export function StudentCard({ name, age, location, school, year, quote, media }:
       {/* Media Carousel */}
       <div className="aspect-[4/3] overflow-hidden relative group">
         {currentMedia.type === 'image' ? (
-          <ImageWithFallback 
+          <ImageWithFallback
             src={currentMedia.url}
             alt={name}
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="relative w-full h-full bg-black">
-            <iframe
-              src={currentMedia.url}
-              className="w-full h-full"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title={`Video of ${name}`}
-            />
-          </div>
+          <VideoWithThumbnail
+            videoUrl={currentMedia.url}
+            thumbnail={currentMedia.thumbnail}
+            name={name}
+          />
         )}
 
         {/* Navigation arrows - always visible if multiple items */}
@@ -85,9 +117,9 @@ export function StudentCard({ name, age, location, school, year, quote, media }:
                   aria-label={`Go to ${item.type} ${index + 1}`}
                 >
                   {item.type === 'video' ? (
-                    <Play className="w-3 h-3" fill={index === currentIndex ? 'currentColor' : 'none'} />
+                    <Play className="w-3.5 h-3.5" fill={index === currentIndex ? 'currentColor' : 'none'} />
                   ) : (
-                    <ImageIcon className="w-3 h-3" />
+                    <ImageIcon className="w-3.5 h-3.5" strokeWidth={index === currentIndex ? 2.5 : 2} />
                   )}
                 </button>
               ))}
@@ -109,12 +141,26 @@ export function StudentCard({ name, age, location, school, year, quote, media }:
         >
           {name}
         </h3>
-        <p className="text-gray-500 mb-4" style={{ fontSize: '0.875rem' }}>
+        <p className="text-gray-500 mb-1" style={{ fontSize: '0.875rem' }}>
           Age {age} • {location} • {school} • {year}
         </p>
-        <p className="text-gray-700 italic leading-relaxed" style={{ fontSize: '1rem' }}>
-          "{quote}"
+        <p className="text-gray-500 mb-4" style={{ fontSize: '0.875rem' }}>
+          Course: {course}
         </p>
+        <div className="text-gray-700 italic leading-relaxed" style={{ fontSize: '1rem' }}>
+          <p>
+            "{shouldTruncate && !isExpanded ? `${quote.slice(0, 150)}...` : quote}"
+          </p>
+          {shouldTruncate && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-sm not-italic mt-2 hover:underline"
+              style={{ color: 'var(--navy)', fontWeight: 500 }}
+            >
+              {isExpanded ? 'See less' : 'See more'}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
