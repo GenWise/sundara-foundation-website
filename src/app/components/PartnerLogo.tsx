@@ -11,7 +11,7 @@ export function PartnerLogo({ name, url, logoUrl }: PartnerLogoProps) {
         <img
           src={logoUrl}
           alt={`${name} logo`}
-          className="h-24 max-w-[280px] object-contain"
+          className="h-32 max-w-[320px] object-contain"
         />
       ) : (
         <span

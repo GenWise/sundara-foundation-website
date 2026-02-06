@@ -223,14 +223,14 @@ export default function Home() {
               year="2025"
               quote="Before coming to GenWise I was an introvert and after coming here I have the courage to talk to people. I now have the courage to come out and be more interactive and help them if they need anything."
               media={[
-                { type: 'image', url: '/images/students/liesha-1.jpg' },
-                { type: 'image', url: '/images/students/liesha-2.jpg' },
-                { type: 'image', url: '/images/students/liesha-3.jpg' },
                 {
                   type: 'video',
                   url: 'https://drive.google.com/file/d/1WKnKkSMH00eIywHLSipnf8hWwSMBn-oh/preview',
                   thumbnail: '/images/students/liesha-1.jpg'
-                }
+                },
+                { type: 'image', url: '/images/students/liesha-1.jpg' },
+                { type: 'image', url: '/images/students/liesha-2.jpg' },
+                { type: 'image', url: '/images/students/liesha-3.jpg' }
               ]}
             />
 
@@ -243,15 +243,15 @@ export default function Home() {
               year="2025"
               quote="I used to be afraid to ask questions but now I ask doubts and I have learned that no questions are right or wrong."
               media={[
-                { type: 'image', url: '/images/students/preksha-1.jpg' },
-                { type: 'image', url: '/images/students/preksha-2.jpg' },
-                { type: 'image', url: '/images/students/preksha-3.jpg' },
-                { type: 'image', url: '/images/students/preksha-4.jpg' },
                 {
                   type: 'video',
                   url: 'https://drive.google.com/file/d/1ivz7vwCP2vJaLyFhvFWU2_eVweqwBmKE/preview',
                   thumbnail: '/images/students/preksha-1.jpg'
-                }
+                },
+                { type: 'image', url: '/images/students/preksha-1.jpg' },
+                { type: 'image', url: '/images/students/preksha-2.jpg' },
+                { type: 'image', url: '/images/students/preksha-3.jpg' },
+                { type: 'image', url: '/images/students/preksha-4.jpg' }
               ]}
             />
 
@@ -280,14 +280,14 @@ export default function Home() {
               year="2024"
               quote="I will never forget my 3 weeks in this gifted program. Gifted World is my utopic world."
               media={[
-                { type: 'image', url: '/images/students/satakshi-1.jpg' },
-                { type: 'image', url: '/images/students/satakshi-2.jpg' },
-                { type: 'image', url: '/images/students/satakshi-3.jpg' },
                 {
                   type: 'video',
                   url: 'https://drive.google.com/file/d/1XQHl9jeScHqvqqySnSbtDf_043XAVpsL/preview',
                   thumbnail: '/images/students/satakshi-1.jpg'
-                }
+                },
+                { type: 'image', url: '/images/students/satakshi-1.jpg' },
+                { type: 'image', url: '/images/students/satakshi-2.jpg' },
+                { type: 'image', url: '/images/students/satakshi-3.jpg' }
               ]}
             />
           </div>

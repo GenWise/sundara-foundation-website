@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Image } from 'lucide-react';
 
 interface StudentMedia {
   type: 'image' | 'video';
@@ -53,35 +53,43 @@ export function StudentCard({ name, age, location, school, year, quote, media }:
           </div>
         )}
 
-        {/* Navigation arrows - only show if multiple media items */}
+        {/* Navigation arrows - always visible if multiple items */}
         {media.length > 1 && (
           <>
             <button
               onClick={prevSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 rounded-full hover:bg-black/80 transition-colors"
               aria-label="Previous"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 rounded-full hover:bg-black/80 transition-colors"
               aria-label="Next"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
 
-            {/* Dots indicator */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-              {media.map((_, index) => (
+            {/* Media type indicator with icons */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/50 px-3 py-1.5 rounded-full">
+              {media.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? 'bg-white w-6' : 'bg-white/50'
+                  className={`p-1 rounded-full transition-all ${
+                    index === currentIndex
+                      ? 'bg-white text-black'
+                      : 'bg-transparent text-white/70 hover:text-white'
                   }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
+                  aria-label={`Go to ${item.type} ${index + 1}`}
+                >
+                  {item.type === 'video' ? (
+                    <Play className="w-3 h-3" fill={index === currentIndex ? 'currentColor' : 'none'} />
+                  ) : (
+                    <Image className="w-3 h-3" />
+                  )}
+                </button>
               ))}
             </div>
           </>
