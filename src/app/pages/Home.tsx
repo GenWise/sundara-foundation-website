@@ -377,12 +377,7 @@ export default function Home() {
             >
               Current Trustees
             </h2>
-            <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-              <PersonCard
-                name="Dr S.H. Patil"
-                role="Reporting Trustee"
-                imageUrl="/images/founders/sh-patil.jpg"
-              />
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <PersonCard
                 name="Shrikant Jayawant Patil"
                 role="Trustee"
