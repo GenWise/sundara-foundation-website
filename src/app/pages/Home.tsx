@@ -246,7 +246,12 @@ export default function Home() {
                 { type: 'image', url: '/images/students/preksha-1.jpg' },
                 { type: 'image', url: '/images/students/preksha-2.jpg' },
                 { type: 'image', url: '/images/students/preksha-3.jpg' },
-                { type: 'image', url: '/images/students/preksha-4.jpg' }
+                { type: 'image', url: '/images/students/preksha-4.jpg' },
+                {
+                  type: 'video',
+                  url: 'https://drive.google.com/file/d/1ivz7vwCP2vJaLyFhvFWU2_eVweqwBmKE/preview',
+                  thumbnail: '/images/students/preksha-1.jpg'
+                }
               ]}
             />
 
