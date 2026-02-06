@@ -441,8 +441,8 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
-            <PartnerLogo name="GenWise" url="https://genwise.com" />
-            <PartnerLogo name="Godrej Foundation" url="https://godrejfoundation.org" />
+            <PartnerLogo name="GenWise" url="https://genwise.com" logoUrl="/images/partners/genwise.png" />
+            <PartnerLogo name="Godrej Foundation" url="https://godrejfoundation.org" logoUrl="/images/partners/godrej-foundation.svg" />
           </div>
         </div>
       </section>
