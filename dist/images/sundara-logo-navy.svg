@@ -1,0 +1,38 @@
+<svg width="800" height="800" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Navy background circle -->
+  <circle cx="100" cy="100" r="100" fill="#0a2e3d"/>
+
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="95" stroke="#e8c84a" stroke-width="3" fill="none"/>
+
+  <!-- 8 petals -->
+  <g transform="translate(100, 100)">
+    <path d="M 0 -60 Q 15 -45 0 -30 Q -15 -45 0 -60" fill="#e8c84a" opacity="0.3" transform="rotate(0)"/>
+    <path d="M 0 -60 Q 15 -45 0 -30 Q -15 -45 0 -60" fill="#e8c84a" opacity="0.3" transform="rotate(45)"/>
+    <path d="M 0 -60 Q 15 -45 0 -30 Q -15 -45 0 -60" fill="#e8c84a" opacity="0.3" transform="rotate(90)"/>
+    <path d="M 0 -60 Q 15 -45 0 -30 Q -15 -45 0 -60" fill="#e8c84a" opacity="0.3" transform="rotate(135)"/>
+    <path d="M 0 -60 Q 15 -45 0 -30 Q -15 -45 0 -60" fill="#e8c84a" opacity="0.3" transform="rotate(180)"/>
+    <path d="M 0 -60 Q 15 -45 0 -30 Q -15 -45 0 -60" fill="#e8c84a" opacity="0.3" transform="rotate(225)"/>
+    <path d="M 0 -60 Q 15 -45 0 -30 Q -15 -45 0 -60" fill="#e8c84a" opacity="0.3" transform="rotate(270)"/>
+    <path d="M 0 -60 Q 15 -45 0 -30 Q -15 -45 0 -60" fill="#e8c84a" opacity="0.3" transform="rotate(315)"/>
+
+    <!-- Central diya/lamp -->
+    <ellipse cx="0" cy="0" rx="25" ry="15" fill="#e8c84a"/>
+
+    <!-- Flame -->
+    <path d="M 0 -15 Q -8 -25 0 -35 Q 8 -25 0 -15" fill="#e8c84a" opacity="0.9"/>
+
+    <!-- S -->
+    <text x="0" y="8" text-anchor="middle"
+      font-family="'Playfair Display', Georgia, serif"
+      font-size="28"
+      font-weight="700"
+      fill="#0a2e3d">S</text>
+  </g>
+
+  <!-- Cardinal dots -->
+  <circle cx="100" cy="5" r="3" fill="#e8c84a" opacity="0.6"/>
+  <circle cx="195" cy="100" r="3" fill="#e8c84a" opacity="0.6"/>
+  <circle cx="100" cy="195" r="3" fill="#e8c84a" opacity="0.6"/>
+  <circle cx="5" cy="100" r="3" fill="#e8c84a" opacity="0.6"/>
+</svg>
